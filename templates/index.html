@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgeSense - Age Group Analysis</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background-color: #f4f4f4;
+        }
+        .navbar {
+            background-color: white;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .navbar a {
+            color: black;
+            text-decoration: none;
+            padding: 10px 20px;
+            font-size: 18px;
+        }
+        .navbar a:hover {
+            background-color: #ddd;
+            border-radius: 5px;
+        }
+        .header {
+            background: linear-gradient(90deg, #0056b3, #007bff);
+            padding: 60px 20px;
+            color: white;
+        }
+        .header h1 {
+            font-size: 42px;
+            margin-bottom: 10px;
+        }
+        .header p {
+            font-size: 18px;
+        }
+        .chart-preview {
+            margin-top: 20px;
+            background-color: white;
+            padding: 20px;
+            width: 50%;
+            margin-left: auto;
+            margin-right: auto;
+            box-shadow: 0px 0px 10px gray;
+            border-radius: 10px;
+        }
+        .chart-preview img {
+            width: 80%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <a href="/">AgeSense</a>
+        <div>
+            <a href="/upload">Upload Data</a>
+            <a href="/visualization">Visualization</a>
+            <a href="/analysis">Analysis</a>
+            <a href="/download">Download Report</a>
+        </div>
+    </div>
+
+    <!-- Header Section -->
+    <div class="header">
+        <h1>Welcome to AgeSense</h1>
+        <p>Analyze age group distributions with interactive charts.</p>
+    </div>
+
+    <!-- Chart Preview -->
+    <div class="chart-preview">
+        <h2>Sample Age Distribution</h2>
+        <img src="{{ url_for('static', filename='images/sample_chart.png') }}" alt="Age Distribution Chart">
+    </div>
+
+</body>
+</html>

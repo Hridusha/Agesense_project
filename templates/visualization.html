@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualization</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
+</head>
+<body>
+    <h2>Age Group Analysis</h2>
+
+    {% if chart_path %}
+        <img src="{{ chart_path }}" alt="Age Group Distribution Chart">
+    {% else %}
+        <p>No data available.</p>
+    {% endif %}
+
+</body>
+</html>
+
+

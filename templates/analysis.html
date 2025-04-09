@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analysis - AgeSense</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h2>Age Group and Gender Analysis</h2>
+
+    {% if table_html %}
+        <h3>Gender Distribution by Age Group</h3>
+        <div class="table-container">{{ table_html | safe }}</div>
+
+        <h3 class="insights-heading">Insights</h3>
+        <div class="insights">
+            <p><strong>Average Age:</strong> {{ avg_age | round(2) }}</p>
+            <p><strong>Median Age:</strong> {{ median_age }}</p>
+            <p><strong>Most Common Age Group:</strong> {{ dominant_age_group }}</p>
+        </div>
+
+        <h3>Age Group vs Gender Chart</h3>
+        <img src="{{ chart_path }}" alt="Gender Distribution Chart">
+    {% else %}
+        <p>No data available.</p>
+    {% endif %}
+</body>
+</html>
